@@ -1,0 +1,9 @@
+name: HelloWorld
+main: net.dreamingraom.HelloWorld.HelloWorld
+version: 0.1
+commands:
+  helloworld:
+    description: This is a demo command.
+    usage: /<command>
+    permission: <plugin name>.basic
+    permission-message: You don't have <permission>

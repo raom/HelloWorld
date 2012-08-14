@@ -1,0 +1,9 @@
+# This is a configuration for Helloworld plugin
+# in yaml format. Do not modify if you don't
+# know what you are doing.
+
+# Message to be displayed
+text: 'Hello World!'
+
+# Player to handle specially
+master: raom
