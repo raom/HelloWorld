@@ -21,11 +21,13 @@ public class HelloWorld extends JavaPlugin {
         getConfig();
         saveDefaultConfig();
         
-        getLogger().info( this.toString() + " enabled.");
+        // Duplicate information
+        //getLogger().info( this.toString() + " enabled.");
     }
      
     public void onDisable() {
-        getLogger().info( this.toString() + " disabled.");
+        // Duplicate information
+        //getLogger().info( this.toString() + " disabled.");
     }
 
 

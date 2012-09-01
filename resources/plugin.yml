@@ -5,5 +5,13 @@ commands:
   helloworld:
     description: This is a demo command.
     usage: /<command>
-    permission: <plugin name>.basic
+    permission: <plugin name>.helloworld
     permission-message: You don't have <permission>
+permissions:
+    helloworld.*:
+        description: Gives access to all helloworld commands
+        children:
+            helloworld.helloworld: true
+    helloworld.helloworld:
+        description: HelloWorlds your chat.
+        default: op

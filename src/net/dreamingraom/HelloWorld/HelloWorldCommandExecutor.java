@@ -15,16 +15,26 @@ public class HelloWorldCommandExecutor implements CommandExecutor {
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        Player player = null;
+    	if (args.length > 0) {
+    	    sender.sendMessage("Too many arguments.");
+    	    return false;
+    	}
+    	
+    	Player player = null;
         if (sender instanceof Player) {
                 player = (Player) sender;
         }
         
-        if(cmd.getName().equalsIgnoreCase("helloworld")){ // If the player typed /basic then do the following...
+        if(cmd.getName().equalsIgnoreCase("helloworld")){
             if (player == null) {
                 sender.sendMessage("HelloWorld run by console.");
             } else {
-                sender.sendMessage("HelloWorld run by console.");
+                if (player.hasPermission("helloworld.helloworld")) {
+                    sender.sendMessage("HelloWorld run by " + player.getName() + ".");
+                } else {
+                    sender.sendMessage("You don't have permission.");
+                    return false;
+                }
             }
             return true;
         } //If this has happened the function will break and return true. if this hasn't happened the a value of false will be returned.
